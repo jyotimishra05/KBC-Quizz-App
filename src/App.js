@@ -43,9 +43,9 @@ const[userName,setUserName]=useState(null)
       
       {userName?
       <>
-        <div className="main">
+        <div className="main" style={{width:stop===true?"100%":"75%"}}>
 
-        {stop ?<h1 className='earnText'>Congratulations {userName} <br/>You Earned {earned}</h1>:(
+        {stop ?<h1 className='earnText'>Congratulations {userName} <br/>You Earned {earned} !</h1>:(
           <>
           <div className="top">
             <div className="timer"><Timer setStop={setStop} questionNumber={questionNumber}/></div>
@@ -58,7 +58,7 @@ const[userName,setUserName]=useState(null)
          
          
         </div>
-        <div className="pyramid">
+       {!stop &&  <div className="pyramid">
         
           <ul className="moneyList">
           <div className="feild">
@@ -76,7 +76,7 @@ const[userName,setUserName]=useState(null)
          
 
           </ul>
-        </div>
+        </div>}
         </>:<Start setUserName={setUserName}/>}
       </div>
     </>
